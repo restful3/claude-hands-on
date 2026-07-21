@@ -5,14 +5,18 @@
 <script>document.documentElement.className="js";</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>메일 한 통이 4시간 뒤 제안서가 된다 — 비개발자 Claude Code 핸즈온</title>
-<meta name="description" content="비개발자가 Claude Code로 업무 요청을 분해하고 근거표·제안서·피드백 반영까지 완주하는 4시간 워크숍. 마곡·가양 리허설 기수 1~2인 모집 중 (참가비 5만원).">
+<meta name="description" content="비개발자가 Claude Code로 업무 요청을 분해하고 근거표·제안서·피드백 반영까지 완주하는 4시간 워크숍. 마곡·가양 리허설 참가자 1~2인 모집 중 (참가비 5만원).">
 <meta name="robots" content="noindex,nofollow">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:title" content="메일 한 통이 4시간 뒤 제안서가 된다 — 비개발자 Claude Code 핸즈온">
-<meta property="og:description" content="업무 요청에서 근거표·제안서·피드백 반영까지 직접 완주하고, 새 업무에서 다시 해보는 비개발자 워크숍. 마곡·가양 리허설 기수 1~2인 모집 중 (참가비 5만원).">
+<meta property="og:description" content="업무 요청에서 근거표·제안서·피드백 반영까지 직접 완주하고, 새 업무에서 다시 해보는 비개발자 워크숍. 마곡·가양 리허설 참가자 1~2인 모집 중 (참가비 5만원).">
 <meta property="og:url" content="https://restful3.github.io/claude-hands-on/">
-<!-- og:image(절대 URL, 1200x630)는 선택 — 없으면 텍스트 카드. robots noindex는 직접 링크 배포 방식이라 유지 (deploy-brief.md) -->
+<meta property="og:image" content="https://restful3.github.io/claude-hands-on/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<!-- robots noindex는 직접 링크 배포 방식이라 유지 (deploy-brief.md) -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR:wght@400;500;700;900&family=JetBrains+Mono:wght@600&display=swap" rel="stylesheet">
@@ -239,9 +243,13 @@
     .pain-grid,.cmp{grid-template-columns:1fr;}
     .pipe{grid-template-columns:1fr; gap:0;}
     .pipe::before{left:33px; right:auto; top:10%; bottom:10%; width:3px; height:auto; background:linear-gradient(var(--blue),var(--amber));}
-    .step{display:grid; grid-template-columns:68px 1fr; gap:16px; text-align:left; align-items:center; padding:10px 0;}
-    .step .node{margin:0;}
-    .step .n{margin-bottom:2px;}
+    .step{display:grid; grid-template-columns:68px 1fr; grid-template-areas:"node n" "node h4" "node p"; column-gap:16px; row-gap:2px; text-align:left; align-items:center; padding:10px 0;}
+    .step .node{grid-area:node; margin:0;}
+    .step .n{grid-area:n; margin-bottom:0; align-self:end;}
+    .step h4{grid-area:h4; margin:0;}
+    .step p{grid-area:p; align-self:start;}
+    .price-stats{gap:10px;}
+    .pstat{flex:1; min-width:0; padding:12px 8px;}
     .res-grid,.trust{grid-template-columns:1fr;}
     .sec{padding:60px 0;}
   }
@@ -257,7 +265,7 @@
 
 <!-- STICKY CTA -->
 <div class="sticky" id="sticky"><div class="wrap">
-  <div class="sticky__txt"><b>리허설 기수 모집 중</b> <span>· 마곡·가양 · 1~2인 · 5만원</span></div>
+  <div class="sticky__txt"><b>리허설 참가자 모집 중</b> <span>· 마곡·가양 · 1~2인 · 5만원</span></div>
   <a class="btn btn--primary" href="https://docs.google.com/forms/d/e/1FAIpQLSfkgjpca7ju0qVWHbRzup8ZFzAiJzAquXuB-yrjJrC5lc8QDA/viewform" target="_blank" rel="noopener">신청하기</a>
 </div></div>
 
@@ -265,11 +273,11 @@
 <header class="hero"><div class="wrap">
   <div class="hero-grid">
     <div>
-      <span class="eyebrow">● 마곡·가양 · 비개발자 1~2인 · 리허설 기수 모집</span>
+      <span class="eyebrow">● 마곡·가양 · 비개발자 1~2인 · 리허설 참가자 모집</span>
       <h1>메일 한 통에서 제안서 초안까지,<br><em>4시간</em>에 직접 완주</h1>
       <p class="sub">Claude Code로 <b>업무 요청 분해 → 근거 확인 → 제안서 → 피드백 반영</b>을 파일로 남기고, 처음 보는 새 업무에서 같은 출발 동작을 혼자 해봅니다.</p>
       <div class="hero-cta">
-        <a class="btn btn--primary" href="https://docs.google.com/forms/d/e/1FAIpQLSfkgjpca7ju0qVWHbRzup8ZFzAiJzAquXuB-yrjJrC5lc8QDA/viewform" target="_blank" rel="noopener">리허설 기수 신청하기</a>
+        <a class="btn btn--primary" href="https://docs.google.com/forms/d/e/1FAIpQLSfkgjpca7ju0qVWHbRzup8ZFzAiJzAquXuB-yrjJrC5lc8QDA/viewform" target="_blank" rel="noopener">리허설 참가 신청하기</a>
         <a class="btn btn--ghost" href="#curriculum">4시간 커리큘럼 보기</a>
       </div>
       <p class="hero-note">✓ 사전 설치 가이드·실습 키트 제공 &nbsp;·&nbsp; ✓ 못 따라와도 무료로 미리 도와드림</p>
@@ -355,7 +363,7 @@
 <!-- CURRICULUM -->
 <section class="sec tl-sec" id="curriculum"><div class="wrap">
   <div class="sec-head reveal">
-    <span class="eyebrow">45분 실습 + 5분 코칭 × 4 · 주말 오후 (일정 협의)</span>
+    <span class="eyebrow">45분 실습 + 5분 코칭 × 4 · 후보 일정 7/25 · 7/26 · 8/1 · 8/2 오후</span>
     <h2>4시간, 이렇게 흘러갑니다</h2>
   </div>
   <div class="tl">
@@ -384,17 +392,17 @@
 <!-- PRICE -->
 <section class="sec price-sec" id="status"><div class="wrap">
   <div class="price-card reveal">
-    <span class="price-badge">리허설 기수 한정</span>
-    <p class="price-old">정가 <s>100,000원</s> 예정</p>
+    <span class="price-badge">첫 리허설 세션 · 1~2인</span>
+    <p class="price-old">정식 오픈 시 100,000원 예정</p>
     <p class="price-now"><span class="num">5</span><span class="won">만원</span><span class="per">/ 4시간 핸즈온</span></p>
-    <p class="price-why">정식 오픈 전 마지막 검증 기수입니다. 진행 과정 관찰 기록과 실습 결과물을 교안 개선에 쓰는 조건(개인정보 제외)으로 절반가에 모십니다.</p>
+    <p class="price-why">정식 오픈 전 교안을 검증하는 첫 세션입니다. 진행 과정을 관찰·기록하고 실습 결과물을 교안 개선에 쓰는 조건(개인정보 제외)으로, 정식 가격의 절반으로 모십니다.</p>
     <div class="price-stats">
       <div class="pstat"><div class="big">1~2</div><div class="lbl">모집 인원</div></div>
       <div class="pstat"><div class="big">4</div><div class="lbl">시간 핸즈온</div></div>
       <div class="pstat"><div class="big">1</div><div class="lbl">예제 완주</div></div>
     </div>
-    <a class="btn btn--primary" href="https://docs.google.com/forms/d/e/1FAIpQLSfkgjpca7ju0qVWHbRzup8ZFzAiJzAquXuB-yrjJrC5lc8QDA/viewform" target="_blank" rel="noopener">리허설 기수 신청하기</a>
-    <p class="price-urgency">1~2명 마감 — 일정은 신청 후 주말 오후로 협의해 확정합니다.</p>
+    <a class="btn btn--primary" href="https://docs.google.com/forms/d/e/1FAIpQLSfkgjpca7ju0qVWHbRzup8ZFzAiJzAquXuB-yrjJrC5lc8QDA/viewform" target="_blank" rel="noopener">리허설 참가 신청하기</a>
+    <p class="price-urgency">후보 일정 7/25(토) · 7/26(일) · 8/1(토) · 8/2(일) 오후 — 신청 시 가능한 날짜를 골라 주세요.</p>
   </div>
 </div></section>
 
@@ -406,12 +414,12 @@
   </div>
   <div class="trust">
     <div class="trust-card reveal">
-      <div class="q">1~2인 밀착 진행 — 막히는 순간 옆에서 바로 코칭합니다. 사전 설치는 세미나 전에 무료로 도와드리고, 당일 시작 1시간 전 설치 지원 시간이 따로 있습니다.</div>
-      <div class="who">— 진행 방식</div>
+      <div class="q">20년 경력의 현직 대기업 AI 엔지니어(공학박사)가 직접 진행합니다. 예측 모델과 AI 에이전트 시스템을 실무로 만들어 왔고, 지금은 비개발자가 Claude Code로 실제 업무를 완주하도록 돕는 교안을 만들고 있습니다. 상세 이력은 신청 확정 연락 때 소개해 드립니다.</div>
+      <div class="who">— 진행자</div>
     </div>
     <div class="trust-card reveal">
-      <div class="q">리허설 기수는 교안을 함께 완성하는 자리입니다. 어디서 막히는지 기록해 교안을 고치고, 그 대신 정가의 절반으로 모십니다. 기록·결과물에서 개인정보는 다루지 않습니다.</div>
-      <div class="who">— 왜 절반가인가</div>
+      <div class="q">1~2인 밀착 진행 — 막히는 순간 옆에서 바로 코칭하고, 사전 설치는 세미나 전에 무료로 도와드립니다. 이번 세션은 정식 오픈 전 교안 검증을 겸해, 어디서 막히는지 기록해 교안을 고치는 조건으로 정식 가격의 절반에 모십니다. 기록·결과물에서 개인정보는 다루지 않습니다.</div>
+      <div class="who">— 진행 방식 · 왜 절반가인가</div>
     </div>
   </div>
 </div></section>
@@ -424,7 +432,8 @@
     <details class="reveal"><summary>챗GPT랑 뭐가 다른가요?<span class="pm">+</span></summary><div class="a">챗GPT는 답을 <b>말해 주지만</b>, 내 PC의 문서·폴더를 만지지는 못합니다. Claude Code는 대화로 시키면 <b>내 폴더의 파일을 실제로 만들고 고칩니다.</b> "AI는 써봤는데 내 업무엔 못 옮겼다"의 원인이 대개 이 차이입니다 — 그래서 이 세미나는 챗GPT 기초를 반복하지 않습니다.</div></details>
     <details class="reveal"><summary>무엇을 준비하나요?<span class="pm">+</span></summary><div class="a">Windows/Mac <b>노트북 + 충전기</b>, Claude 계정. 신청 확정 후 <b>사전 설치 가이드와 실습 키트</b>를 보내드리고, 세미나 2~3일 전 간단한 환경 체크(5분)가 있습니다.</div></details>
     <details class="reveal"><summary>Claude 이용료가 따로 드나요?<span class="pm">+</span></summary><div class="a">네, 실습에 쓰는 Code 탭은 <b>Claude 유료 플랜(Pro 이상, 월 $20 수준)이 필요</b>합니다 — 무료 계정에는 열리지 않습니다. 이미 Pro를 쓰고 계시면 추가 비용이 없고, 처음이라면 사전 안내에서 가입 절차를 함께 도와드립니다. 세미나 후에도 계속 쓰실 도구라 이 비용은 수강료가 아니라 <b>도구 구독료</b>입니다.</div></details>
-    <details class="reveal"><summary>지금 신청할 수 있나요?<span class="pm">+</span></summary><div class="a">네. 정식 오픈 전 <b>리허설 기수 1~2명</b>을 모집 중입니다. 신청 폼을 남겨주시면 1~2일 내 연락드리고, 일정은 7월 말~8월 초 주말 오후 중 협의해 확정합니다.</div></details>
+    <details class="reveal"><summary>지금 신청할 수 있나요?<span class="pm">+</span></summary><div class="a">네. 정식 오픈 전 <b>리허설 참가자 1~2명</b>을 모집 중입니다. 신청 폼을 남겨주시면 1~2일 내 연락드리고, 일정은 후보 날짜(7/25 · 7/26 · 8/1 · 8/2 오후) 중에서 함께 확정합니다.</div></details>
+    <details class="reveal"><summary>참가비는 어떻게 내나요?<span class="pm">+</span></summary><div class="a">신청 폼 제출 후 <b>확정 연락을 드릴 때 계좌 이체로 안내</b>드립니다. 입금 확인 순으로 자리가 확정되며, 페이지에는 결제 정보를 두지 않습니다.</div></details>
     <details class="reveal"><summary>배운 걸 제 업무에 바로 쓸 수 있나요?<span class="pm">+</span></summary><div class="a">솔직하게 — 4시간 만에 내 업무 전체가 자동화되지는 않습니다. 이 세미나에서 가져가는 것은 <b>예제 업무 1건의 완주 경험</b>과, 마지막 세션에서 직접 설계하는 <b>내 업무 1개의 자동화 계획(루프 카드)</b>입니다. 월요일에 그 카드부터 시작하시면 됩니다.</div></details>
     <details class="reveal"><summary>설치가 막히면요?<span class="pm">+</span></summary><div class="a">걱정 마세요. 미리 <b>무료로 도와드리고</b>, 정 안 되면 당일 동일 실습을 샘플 데이터로 진행합니다.</div></details>
     <details class="reveal"><summary>환불 규정은요?<span class="pm">+</span></summary><div class="a">시작 <b>3일 전까지 전액 환불</b>, 2일 전~전날은 50% 환불, 당일·노쇼는 환불이 어렵습니다. 최소 인원 미달 등 <b>주최 측 사유로 취소되면 전액 환불</b>해 드립니다.</div></details>
@@ -434,9 +443,9 @@
 <!-- FINAL CTA -->
 <section class="final"><div class="wrap">
   <h2>주말 오후 <em>4시간</em>,<br>메일에서 제안서까지 직접 만들어 봅니다</h2>
-  <p>정식 오픈 전 리허설 기수 — 함께 교안을 완성할 첫 참가자 1~2분을 찾습니다.</p>
-  <a class="btn btn--primary" href="https://docs.google.com/forms/d/e/1FAIpQLSfkgjpca7ju0qVWHbRzup8ZFzAiJzAquXuB-yrjJrC5lc8QDA/viewform" target="_blank" rel="noopener">리허설 기수 신청하기 (5만원)</a>
-  <p class="mini">마곡·가양 인근 · 1~2인 · 일정은 신청 후 협의 (7월 말~8월 초 주말)</p>
+  <p>정식 오픈 전 리허설 세션 — 함께 교안을 완성할 첫 참가자 1~2분을 찾습니다.</p>
+  <a class="btn btn--primary" href="https://docs.google.com/forms/d/e/1FAIpQLSfkgjpca7ju0qVWHbRzup8ZFzAiJzAquXuB-yrjJrC5lc8QDA/viewform" target="_blank" rel="noopener">리허설 참가 신청하기 (5만원)</a>
+  <p class="mini">마곡·가양 인근 스터디룸 (확정 후 개별 안내) · 1~2인 · 후보 일정 7/25 · 7/26 · 8/1 · 8/2 오후</p>
 </div></section>
 
 <footer>claude-code-workshop · 비개발자를 위한 Claude Code 업무 자동화 핸즈온</footer>

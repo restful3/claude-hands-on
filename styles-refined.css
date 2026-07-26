@@ -989,9 +989,9 @@ footer {
 
   .hero h1 {
     margin: 16px 0 20px;
-    font-size: clamp(34px, 10.7vw, 48px);
+    font-size: clamp(43px, 12.2vw, 54px);
     line-height: 1.02;
-    letter-spacing: -.058em;
+    letter-spacing: -.062em;
   }
 
   .hero .sub {

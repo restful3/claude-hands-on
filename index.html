@@ -155,8 +155,7 @@
   /* ===== PIPELINE (signature) ===== */
   .pipe-wrap{margin-top:20px;}
   .pipe{display:grid; grid-template-columns:repeat(5,1fr); gap:0; position:relative;}
-  .pipe::before{content:""; position:absolute; top:34px; left:9%; right:9%; height:3px;
-    background:linear-gradient(90deg,var(--blue),var(--amber)); border-radius:3px; z-index:0;}
+  .pipe::before{display:none;}
   .step{position:relative; z-index:1; text-align:center; padding:0 8px;}
   .step .node{width:68px; height:68px; margin:0 auto 14px; border-radius:20px; display:grid; place-items:center;
     font-size:28px; background:var(--card); border:2px solid var(--line); box-shadow:var(--shadow);}
@@ -271,7 +270,7 @@
     .pain-grid,.cmp,.fit-grid{grid-template-columns:1fr;}
     .quality-grid{grid-template-columns:repeat(2,1fr);}
     .pipe{grid-template-columns:1fr; gap:0;}
-    .pipe::before{left:33px; right:auto; top:10%; bottom:10%; width:3px; height:auto; background:linear-gradient(var(--blue),var(--amber));}
+    .pipe::before{display:none;}
     .step{display:grid; grid-template-columns:68px 1fr; grid-template-areas:"node n" "node h4" "node p"; column-gap:16px; row-gap:2px; text-align:left; align-items:center; padding:10px 0;}
     .step .node{grid-area:node; margin:0;}
     .step .n{grid-area:n; margin-bottom:0; align-self:end;}
@@ -302,7 +301,7 @@
     .btn:hover,.cmp-card:hover{transform:none;}
   }
 </style>
-<link rel="stylesheet" href="styles-refined.css">
+<link rel="stylesheet" href="styles-refined.css?v=20260726-2">
 </head>
 <body>
 

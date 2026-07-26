@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="640" height="520" viewBox="0 0 640 520" role="img" aria-labelledby="title desc">
-  <title id="title">업무 메일이 근거표와 제안서로 이어지는 과정</title>
-  <desc id="desc">받은 업무와 자료를 프로젝트 폴더에서 처리해 근거표와 제안서 결과물로 만드는 흐름</desc>
+  <title id="title">Claude 업무 하네스가 입력을 실제 결과로 바꾸는 과정</title>
+  <desc id="desc">업무 메일과 자료가 Claude, MCP, Skill, Plugin으로 구성된 업무 하네스를 거쳐 근거표와 제안서로 이어지는 흐름</desc>
   <defs>
     <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#19375f" stop-opacity=".96"/>
@@ -36,8 +36,8 @@
   <g filter="url(#shadow)">
     <rect x="116" y="198" width="408" height="88" rx="12" fill="#07111f" stroke="#f2aa3c" stroke-opacity=".65"/>
     <rect x="140" y="222" width="8" height="8" rx="2" fill="url(#accent)"/>
-    <text x="164" y="232" fill="#f2aa3c" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="600" letter-spacing=".7">CLAUDE CODE · PROJECT FOLDER</text>
-    <text x="140" y="259" fill="#dce5f1" font-family="Pretendard, 'Noto Sans KR', sans-serif" font-size="14" font-weight="550">“자료를 확인하고 근거가 보이는 제안서로 정리해줘”</text>
+    <text x="164" y="232" fill="#f2aa3c" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="600" letter-spacing=".7">CLAUDE · MCP · SKILL · PLUGIN</text>
+    <text x="140" y="259" fill="#dce5f1" font-family="Pretendard, 'Noto Sans KR', sans-serif" font-size="14" font-weight="550">“규칙·도구·절차를 연결해 이 업무를 끝내줘”</text>
   </g>
 
   <path d="M320 286V326M178 326H462M178 326V350M462 326V350" fill="none" stroke="#f2aa3c" stroke-width="1.5"/>

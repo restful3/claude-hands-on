@@ -5,12 +5,12 @@
 <script>document.documentElement.className="js";</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>답하는 AI에서, 일하는 AI로 — 비개발자 Claude Code 핸즈온</title>
-<meta name="description" content="이제 Claude Code에게 일을 맡기세요. 코딩 경험 0부터 메일 분석·근거표·제안서·수정본까지 하나의 업무 흐름을 4시간 동안 직접 완주하는 비개발자 오프라인 실습입니다.">
+<meta name="description" content="이제 Claude에게 일을 맡기세요. 코딩 경험 0부터 작업 폴더·권한·MCP·Skill·Plugin을 연결해 내 업무 하네스 한 세트를 완성하는 비개발자 4시간 오프라인 실습입니다.">
 <meta name="robots" content="noindex,nofollow">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:title" content="답하는 AI에서, 일하는 AI로">
-<meta property="og:description" content="이제 Claude Code에게 일을 맡기세요. 코딩 경험 0부터 결과 파일까지 직접 완주하는 비개발자 4시간 오프라인 실습.">
+<meta property="og:description" content="작업 폴더·권한·MCP·Skill·Plugin을 연결해 Claude가 일할 환경 한 세트를 완성하는 비개발자 4시간 오프라인 실습.">
 <meta property="og:url" content="https://restful3.github.io/claude-hands-on/">
 <meta property="og:image" content="https://restful3.github.io/claude-hands-on/og.png">
 <meta property="og:image:width" content="1200">
@@ -155,7 +155,7 @@
 
   /* ===== PIPELINE (signature) ===== */
   .pipe-wrap{margin-top:20px;}
-  .pipe{display:grid; grid-template-columns:repeat(5,1fr); gap:0; position:relative;}
+  .pipe{display:grid; grid-template-columns:repeat(6,1fr); gap:0; position:relative;}
   .pipe::before{display:none;}
   .step{position:relative; z-index:1; text-align:center; padding:0 8px;}
   .step .node{width:68px; height:68px; margin:0 auto 14px; border-radius:20px; display:grid; place-items:center;
@@ -302,7 +302,7 @@
     .btn:hover,.cmp-card:hover{transform:none;}
   }
 </style>
-<link rel="stylesheet" href="styles-refined.css?v=20260726-4">
+<link rel="stylesheet" href="styles-refined.css?v=20260726-5">
 </head>
 <body>
 
@@ -316,9 +316,9 @@
 <header class="hero"><div class="wrap">
   <div class="hero-grid">
     <div class="hero-copy">
-      <span class="eyebrow">코딩 경험 0부터 · 비개발자 Claude Code 오프라인 실습</span>
+      <span class="eyebrow">코딩 경험 0부터 · Claude 업무 하네스 오프라인 실습</span>
       <h1><span class="line">답하는 AI에서,</span><br><em class="line">일하는 AI로.</em></h1>
-      <p class="sub">이제 Claude Code에게 일을 맡기세요. 조언을 읽고 복사하는 데서 끝나지 않고, 내 폴더의 자료를 바탕으로 <b>메일 분석 → 근거표 → 제안서 → 수정본</b>까지 이어서 처리하도록 직접 지시합니다.</p>
+      <p class="sub">이제 Claude에게 일을 맡기세요. 코딩 경험이 없어도 <b>작업 폴더·권한·MCP·Skill·Plugin</b>을 한 층씩 연결하고, 4시간 뒤 새 업무에 다시 쓰는 <b>업무 하네스 한 세트</b>를 완성합니다.</p>
       <ul class="hero-facts" aria-label="일정과 참가 조건">
         <li><b>8/8 토요일</b><span>오후 1시 시작</span></li>
         <li><b>마곡·가양</b><span>오프라인</span></li>
@@ -334,7 +334,7 @@
     </div>
 
     <div class="hero-visual">
-      <img src="workflow.svg" width="640" height="520" alt="업무 메일과 자료를 프로젝트 폴더에서 처리해 근거표와 제안서로 완성하는 흐름">
+      <img src="workflow.svg" width="640" height="520" alt="업무 입력이 Claude, MCP, Skill, Plugin으로 구성된 업무 하네스를 거쳐 근거표와 제안서로 이어지는 흐름">
     </div>
   </div>
 </div></header>
@@ -360,8 +360,8 @@
     <article class="fit-card fit-card--yes reveal">
       <h3>이런 분께 맞습니다</h3>
       <ul>
-        <li>AI 답변을 실제 보고서·제안서 같은 문서로 이어가고 싶은 비개발자</li>
-        <li>하나의 예제 업무를 직접 끝까지 해보며 일 맡기는 흐름을 익힐 분</li>
+        <li>Claude App·Code·MCP·Skill·Plugin의 차이를 직접 써보며 이해하고 싶은 비개발자</li>
+        <li>한 번의 프롬프트보다 다시 쓰는 업무 환경을 직접 만들어보고 싶은 분</li>
         <li>노트북을 지참하고 사전 환경 체크에 참여할 수 있는 분</li>
       </ul>
     </article>
@@ -379,17 +379,18 @@
 <!-- PIPELINE -->
 <section class="sec"><div class="wrap">
   <div class="sec-head reveal">
-    <span class="eyebrow">4시간 완주 흐름</span>
-    <h2>흩어진 업무 재료가<br>하나의 제안서로 이어집니다</h2>
-    <p>따로 노는 5단계를 <b>한 흐름으로</b> — 그 자리에서 손으로 끝냅니다.</p>
+    <span class="eyebrow">업무 하네스의 여섯 층</span>
+    <h2>Claude가 일하는 환경을<br>여섯 층으로 조립합니다</h2>
+    <p>앱을 켜는 데서 끝나지 않고, <b>맥락·통제·도구·절차·패키지</b>를 한 흐름으로 연결합니다.</p>
   </div>
   <div class="pipe-wrap reveal">
     <div class="pipe">
-      <div class="step"><span class="n">STEP 1</span><div class="node">01</div><h4>메일 받기</h4><p>박팀장 지시를 작업으로 분해</p></div>
-      <div class="step"><span class="n">STEP 2</span><div class="node">02</div><h4>리서치</h4><p>공개 자료로 근거 수집</p></div>
-      <div class="step"><span class="n">STEP 3</span><div class="node">03</div><h4>근거표</h4><p>확정·추정 나눠 정리</p></div>
-      <div class="step"><span class="n">STEP 4</span><div class="node">04</div><h4>제안서 초안</h4><p>회사 양식으로 완성</p></div>
-      <div class="step"><span class="n">완주</span><div class="node">05</div><h4>피드백 반영</h4><p>수정 루프까지 한 바퀴</p></div>
+      <div class="step"><span class="n">SURFACE</span><div class="node">01</div><h4>Claude App·Code</h4><p>업무에 맞는 작업 화면</p></div>
+      <div class="step"><span class="n">CONTEXT</span><div class="node">02</div><h4>CLAUDE.md</h4><p>폴더에 업무 기준 저장</p></div>
+      <div class="step"><span class="n">CONTROL</span><div class="node">03</div><h4>권한·diff</h4><p>변경 범위 직접 통제</p></div>
+      <div class="step"><span class="n">TOOLS</span><div class="node">04</div><h4>MCP</h4><p>외부 자료 읽기 연결</p></div>
+      <div class="step"><span class="n">PROCEDURE</span><div class="node">05</div><h4>Skill</h4><p>반복 절차 파일로 저장</p></div>
+      <div class="step"><span class="n">PACKAGE</span><div class="node">06</div><h4>Plugin</h4><p>기능을 한 세트로 묶기</p></div>
     </div>
   </div>
 </div></section>
@@ -402,35 +403,35 @@
   </div>
   <div class="cmp">
     <div class="cmp-card reveal">
-      <div class="tag">혼자 보는 VOD</div>
-      <div class="old"><span class="x">✕</span><span>영상 수십 시간을 혼자 보고 끝</span></div>
-      <div class="new"><span class="v">✓</span><span>우리는 <b>그 자리에서 직접 완성</b></span></div>
+      <div class="tag">기능을 보는 VOD</div>
+      <div class="old"><span class="x">✕</span><span>화면과 메뉴를 보고 이해한 느낌으로 끝</span></div>
+      <div class="new"><span class="v">✓</span><span>직접 설정하고 <b>실제 파일 변경까지 확인</b></span></div>
     </div>
     <div class="cmp-card reveal">
-      <div class="tag">대화창 중심의 일회성 사용</div>
-      <div class="old"><span class="x">✕</span><span>답을 복사해 문서마다 따로 옮김</span></div>
-      <div class="new"><span class="v">✓</span><span>프로젝트 폴더에서 <b>여러 파일을 한 흐름으로 완성</b></span></div>
+      <div class="tag">일회성 프롬프트</div>
+      <div class="old"><span class="x">✕</span><span>같은 설명과 체크리스트를 매번 다시 입력</span></div>
+      <div class="new"><span class="v">✓</span><span>잘된 절차를 <b>내 Skill로 저장해 다시 호출</b></span></div>
     </div>
     <div class="cmp-card reveal">
-      <div class="tag">며칠짜리 코스</div>
-      <div class="old"><span class="x">✕</span><span>여러 날 나눠 이론만</span></div>
-      <div class="new"><span class="v">✓</span><span><b>하루 4시간</b>, 예제 업무 1건 완주</span></div>
+      <div class="tag">나열식 기능 투어</div>
+      <div class="old"><span class="x">✕</span><span>MCP·Skill·Plugin을 따로따로 맛보기</span></div>
+      <div class="new"><span class="v">✓</span><span><b>하나의 업무 하네스</b>로 묶고 새 업무에서 재실행</span></div>
     </div>
   </div>
-  <p class="cmp-foot reveal">“또 하나의 챗GPT 강의”가 아니라 — <b>비개발자를 위한, 완전 오프라인 소수정예 Claude Code 핸즈온.</b></p>
+  <p class="cmp-foot reveal">기능 설명 70%, 업무 결과 30% — <b>배운 기능이 실제 일에 연결되는지 그 자리에서 확인합니다.</b></p>
 </div></section>
 
 <!-- CURRICULUM -->
 <section class="sec tl-sec" id="curriculum"><div class="wrap">
   <div class="sec-head reveal">
     <span class="eyebrow">45분 실습 + 5분 코칭 × 4 · 8/8(토) 오후 1시</span>
-    <h2>4시간, 이렇게 흘러갑니다</h2>
+    <h2>4시간, Claude 업무 하네스를 직접 조립합니다</h2>
   </div>
   <div class="tl">
-    <div class="tl-item reveal"><div class="tl-dot">S1</div><div class="tl-time mono">0:00 – 0:50</div><h4>첫 파일을 읽고 고치기</h4><p>전체 실습 폴더를 열고, 메일을 읽힌 뒤 첫 결과 파일을 diff에서 확인합니다.</p></div>
-    <div class="tl-item reveal"><div class="tl-dot">S2</div><div class="tl-time mono">1:00 – 1:50</div><h4>업무 요청 구조화</h4><p>메일을 목적·산출물·제약·숨은 기대·확인 질문으로 나눠 파일로 저장합니다.</p></div>
-    <div class="tl-item win reveal"><div class="tl-dot">S3</div><div class="tl-time mono">2:00 – 2:50</div><h4>근거표와 원문 대조</h4><p>주장·출처 URL·원문 구절·판정 3행을 만들고 링크를 직접 확인합니다.</p></div>
-    <div class="tl-item reveal"><div class="tl-dot">S4</div><div class="tl-time mono">3:00 – 3:50</div><h4>제안서·피드백·독립 수행 <span class="star">전이 확인</span></h4><p>초안과 수정본을 만든 뒤, 처음 보는 새 업무 메일을 도움 없이 구조화합니다.</p></div>
+    <div class="tl-item reveal"><div class="tl-dot">S1</div><div class="tl-time mono">0:00 – 0:50</div><h4>Claude App·Code 작업대 설정</h4><p>Desktop/Cowork와 Code의 역할을 나누고, 폴더·CLAUDE.md·권한·Plan·diff를 설정합니다.</p></div>
+    <div class="tl-item reveal"><div class="tl-dot">S2</div><div class="tl-time mono">1:00 – 1:50</div><h4>MCP·Connector로 외부 도구 연결</h4><p>실습용 Gmail/Drive 중 하나를 읽기 전용으로 호출하고, 도구·권한·결과를 연결 기록에 남깁니다.</p></div>
+    <div class="tl-item win reveal"><div class="tl-dot">S3</div><div class="tl-time mono">2:00 – 2:50</div><h4>반복 업무를 Skill로 저장</h4><p>메일→근거표→제안서 절차를 SKILL.md로 만들고 직접 호출해 결과와 diff를 검수합니다.</p></div>
+    <div class="tl-item reveal"><div class="tl-dot">S4</div><div class="tl-time mono">3:00 – 3:50</div><h4>Plugin으로 업무 하네스 완성 <span class="star">전이 확인</span></h4><p>manifest·Skill·Agent·Hook·MCP 구조를 읽고 로컬 Plugin을 불러와 새 업무에서 다시 실행합니다.</p></div>
   </div>
 </div></section>
 
@@ -441,12 +442,12 @@
     <h2>가지고 돌아가는 것</h2>
   </div>
   <div class="res-grid">
-    <div class="res reveal"><div class="ck">1</div><div><h4>대화로 일 시키는 법</h4><p>내 폴더를 열고 Claude Code에게 업무를 위임하는 감각.</p></div></div>
-    <div class="res reveal"><div class="ck">2</div><div><h4>완주 경험 한 바퀴</h4><p>메일 → 리서치 → 근거표 → 제안서 초안까지 직접.</p></div></div>
-    <div class="res reveal"><div class="ck">3</div><div><h4>수정 루프</h4><p>팀장 피드백을 반영해 고치는 실전 흐름.</p></div></div>
-    <div class="res reveal"><div class="ck">4</div><div><h4>독립 수행 + 전환카드</h4><p>새 업무에서 다시 해보고, 다음 주 적용할 업무와 날짜를 정함.</p></div></div>
+    <div class="res reveal"><div class="ck">1</div><div><h4>업무 기준·권한 설정</h4><p>CLAUDE.md와 로컬 권한, Plan·diff 검수 기준.</p></div></div>
+    <div class="res reveal"><div class="ck">2</div><div><h4>MCP 연결 기록</h4><p>어떤 도구로 무엇을 읽었고 어디까지 허용했는지 남긴 기록.</p></div></div>
+    <div class="res reveal"><div class="ck">3</div><div><h4>나만의 Skill</h4><p>반복 업무의 입력·출력·절차·금지선을 담은 SKILL.md.</p></div></div>
+    <div class="res reveal"><div class="ck">4</div><div><h4>Plugin + 새 업무 재실행</h4><p>하네스 템플릿을 불러와 처음 보는 입력에 다시 적용한 결과.</p></div></div>
   </div>
-  <p class="res-callout reveal"><b>솔직하게:</b> 개인 업무 전체를 대신 자동화해 주는 강의가 아닙니다. <b>하나의 예제 업무를 완주</b>하며, 내 업무로 옮기는 방법을 손으로 익히는 자리입니다.</p>
+  <p class="res-callout reveal"><b>솔직하게:</b> 여러 MCP·Hook·Agent를 한 번에 마스터하거나 개인 업무 전체를 자동화하는 강의는 아닙니다. <b>MCP 1개·Skill 1개·Plugin 템플릿 1개</b>를 실제로 연결해, 다시 쓸 수 있는 하네스 한 세트를 완성합니다.</p>
 </div></section>
 
 <!-- PRICE -->
@@ -458,7 +459,7 @@
     <div class="price-stats">
       <div class="pstat"><div class="big">4~5</div><div class="lbl">모집 인원</div></div>
       <div class="pstat"><div class="big">4</div><div class="lbl">시간 핸즈온</div></div>
-      <div class="pstat"><div class="big">1</div><div class="lbl">예제 완주</div></div>
+      <div class="pstat"><div class="big">1</div><div class="lbl">업무 하네스</div></div>
     </div>
     <a class="btn btn--primary" href="https://docs.google.com/forms/d/e/1FAIpQLSfkgjpca7ju0qVWHbRzup8ZFzAiJzAquXuB-yrjJrC5lc8QDA/viewform" target="_blank" rel="noopener">리허설 참가 신청하기</a>
     <p class="price-urgency">8월 8일 토요일 오후 1시 — 마곡·가양 인근에서 진행합니다.</p>
@@ -473,10 +474,10 @@
     <p>첫 리허설이라 만들어진 후기는 없습니다. 대신 실제 수업 설계와 진행 원칙을 공개합니다.</p>
   </div>
   <div class="quality-grid">
-    <article class="quality-card reveal"><div class="ico">01 · FILES</div><h3>매 세션 파일이 남습니다</h3><p>화면을 보고 끝내지 않고 분해표·근거표·제안서·수정본을 저장합니다.</p></article>
-    <article class="quality-card reveal"><div class="ico">02 · TRANSFER</div><h3>새 업무에서 다시 해봅니다</h3><p>마지막에는 처음 보는 업무를 혼자 시작해 같은 출발 동작을 확인합니다.</p></article>
-    <article class="quality-card reveal"><div class="ico">03 · PREFLIGHT</div><h3>수업 전 환경을 확인합니다</h3><p>2~3일 전 가이드와 환경 체크를 보내고, 막힌 설치는 무료로 돕습니다.</p></article>
-    <article class="quality-card reveal"><div class="ico">04 · PLAN B</div><h3>막혀도 완주하는 플랜B</h3><p>도구 연결이 안 되면 샘플 자료와 중간 산출물로 다음 단계에 합류합니다.</p></article>
+    <article class="quality-card reveal"><div class="ico">01 · CONTROL</div><h3>설정과 변경을 직접 봅니다</h3><p>CLAUDE.md·권한·Plan·diff를 구분하고, 바뀐 파일을 눈으로 확인합니다.</p></article>
+    <article class="quality-card reveal"><div class="ico">02 · BUILD</div><h3>MCP·Skill·Plugin이 남습니다</h3><p>메뉴를 보는 데서 끝내지 않고 연결 기록·Skill·Plugin 템플릿을 저장합니다.</p></article>
+    <article class="quality-card reveal"><div class="ico">03 · PREFLIGHT</div><h3>수업 전 연결까지 확인합니다</h3><p>설치·로그인·읽기 전용 Connector·Plugin 로드 여부를 사전에 점검합니다.</p></article>
+    <article class="quality-card reveal"><div class="ico">04 · PLAN B</div><h3>연결이 막혀도 구조는 배웁니다</h3><p>제공 원문·검증된 Skill·Plugin 템플릿으로 즉시 전환해 다음 층에 합류합니다.</p></article>
   </div>
   <div class="trust-subhead reveal">
     <span class="eyebrow">INSTRUCTOR</span>
@@ -498,8 +499,8 @@
       </ul>
     </div>
     <div class="trust-card reveal">
-      <div class="q">도구 기능을 나열하는 강의보다, 참가자가 실제 파일을 읽고 만들고 고치는 과정을 끝까지 따라갑니다. 4~5인 소수정예로 막히는 지점을 바로 코칭하고, 수업 전 설치 가이드와 환경 점검을 제공합니다. 이번 파일럿에서 발견한 어려움은 다음 교안에 반영하며, 기록과 결과물에서는 개인정보를 다루지 않습니다.</div>
-      <div class="who">진행 원칙 · 기능 설명보다 업무 완주</div>
+      <div class="q">Claude App·Code, MCP, Skill, Plugin을 각각 설명한 뒤 하나의 업무 하네스로 연결합니다. 4~5인 소수정예로 설정과 연결에서 막히는 지점을 바로 코칭하고, 각 기능은 실제 업무 파일과 결과로 검증합니다. 이번 파일럿의 기록과 결과물에서는 개인정보를 다루지 않습니다.</div>
+      <div class="who">진행 원칙 · 기능 70%, 업무 결과 30%</div>
     </div>
   </div>
 </div></section>
@@ -508,27 +509,27 @@
 <section class="sec faq-sec"><div class="wrap narrow">
   <div class="sec-head reveal"><span class="eyebrow">자주 묻는 것</span><h2>궁금한 점</h2></div>
   <div class="faq">
-    <details class="reveal" open><summary>개발을 전혀 몰라도 되나요?<span class="pm">+</span></summary><div class="a">네. 코딩을 배우는 자리가 아니라, <b>대화로 업무를 시키는</b> 법을 익히는 핸즈온입니다. 사무직·행정직 비개발자가 대상입니다.</div></details>
-    <details class="reveal"><summary>챗GPT랑 뭐가 다른가요?<span class="pm">+</span></summary><div class="a">둘 다 유용하지만 이 수업의 작업 방식이 다릅니다. 대화창에서 한 번의 답을 얻는 연습이 아니라, Claude Code로 <b>하나의 프로젝트 폴더를 열고 여러 파일을 읽고 만들고 수정하는 흐름</b>을 직접 완주합니다. 그래서 챗GPT 기초 사용법은 반복하지 않습니다.</div></details>
-    <details class="reveal"><summary>무엇을 준비하나요?<span class="pm">+</span></summary><div class="a">Windows/Mac <b>노트북 + 충전기</b>, Claude 계정. 신청 확정 후 <b>사전 설치 가이드와 실습 키트</b>를 보내드리고, 세미나 2~3일 전 간단한 환경 체크(5분)가 있습니다.</div></details>
+    <details class="reveal" open><summary>개발을 전혀 몰라도 되나요?<span class="pm">+</span></summary><div class="a">네. 프로그래밍 문법은 다루지 않습니다. 다만 폴더·설정 파일을 열고 짧은 명령을 실행하므로, 보내드리는 <b>사전 설치·연결 점검</b>은 꼭 완료해야 합니다.</div></details>
+    <details class="reveal"><summary>일반 AI 강의와 뭐가 다른가요?<span class="pm">+</span></summary><div class="a">대화창에서 한 번의 답을 얻는 연습이 아닙니다. 프로젝트 폴더에 업무 기준을 저장하고, <b>MCP로 도구를 연결하고, 절차를 Skill로 만들고, Plugin으로 묶어</b> 새 업무에서 다시 실행합니다.</div></details>
+    <details class="reveal"><summary>무엇을 준비하나요?<span class="pm">+</span></summary><div class="a">Windows/Mac <b>노트북 + 충전기</b>, Claude 유료 계정이 필요합니다. 신청 확정 후 Desktop·VS Code·Claude Code CLI·실습용 읽기 Connector·Plugin 템플릿을 확인하는 사전 가이드를 보내드립니다.</div></details>
     <details class="reveal"><summary>Claude 이용료가 따로 드나요?<span class="pm">+</span></summary><div class="a">네, 실습에 쓰는 Code 탭은 <b>Claude 유료 플랜(Pro 이상, 월 $20 수준)이 필요</b>합니다 — 무료 계정에는 열리지 않습니다. 이미 Pro를 쓰고 계시면 추가 비용이 없고, 처음이라면 사전 안내에서 가입 절차를 함께 도와드립니다. 세미나 후에도 계속 쓰실 도구라 이 비용은 수강료가 아니라 <b>도구 구독료</b>입니다.</div></details>
     <details class="reveal"><summary>지금 신청할 수 있나요?<span class="pm">+</span></summary><div class="a">네. 정식 오픈 전 <b>리허설 참가자 4~5명</b>을 모집 중입니다. 신청 폼을 남겨주시면 1~2일 내 연락드리며, 일정은 <b>8월 8일 토요일 오후 1시</b>로 확정되어 있습니다.</div></details>
     <details class="reveal"><summary>참가비는 어떻게 내나요?<span class="pm">+</span></summary><div class="a">신청 폼 제출 후 <b>확정 연락을 드릴 때 계좌 이체로 안내</b>드립니다. 입금 확인 순으로 자리가 확정되며, 페이지에는 결제 정보를 두지 않습니다.</div></details>
-    <details class="reveal"><summary>배운 걸 제 업무에 바로 쓸 수 있나요?<span class="pm">+</span></summary><div class="a">솔직하게 — 4시간 만에 내 업무 전체가 자동화되지는 않습니다. 이 세미나에서 가져가는 것은 <b>예제 업무 1건의 완주 경험</b>과, 마지막 세션에서 직접 설계하는 <b>내 업무 1개의 자동화 계획(루프 카드)</b>입니다. 월요일에 그 카드부터 시작하시면 됩니다.</div></details>
-    <details class="reveal"><summary>설치가 막히면요?<span class="pm">+</span></summary><div class="a">걱정 마세요. 미리 <b>무료로 도와드리고</b>, 정 안 되면 당일 동일 실습을 샘플 데이터로 진행합니다.</div></details>
+    <details class="reveal"><summary>배운 걸 제 업무에 바로 쓸 수 있나요?<span class="pm">+</span></summary><div class="a">4시간 만에 업무 전체를 자동화하지는 않습니다. 대신 <b>업무 기준·MCP 연결 기록·Skill·Plugin 템플릿</b> 한 세트를 가져가고, 마지막에 새 업무로 재실행해 어디까지 재사용되는지 확인합니다.</div></details>
+    <details class="reveal"><summary>설치나 MCP 연결이 막히면요?<span class="pm">+</span></summary><div class="a">사전에 무료로 점검합니다. 당일에도 해결이 길어지면 제공 원문·검증된 Skill·Plugin 템플릿으로 전환해 구조와 호출 실습을 계속합니다.</div></details>
     <details class="reveal"><summary>환불 규정은요?<span class="pm">+</span></summary><div class="a">시작 <b>3일 전까지 전액 환불</b>, 2일 전~전날은 50% 환불, 당일·노쇼는 환불이 어렵습니다. 최소 인원 미달 등 <b>주최 측 사유로 취소되면 전액 환불</b>해 드립니다.</div></details>
   </div>
 </div></section>
 
 <!-- FINAL CTA -->
 <section class="final"><div class="wrap">
-  <h2>주말 오후 <em>4시간</em>,<br>AI에게 첫 업무를 맡겨보세요</h2>
-  <p>메일에서 근거표·제안서·수정본까지 직접 완주할 파일럿 참가자 4~5분을 찾습니다.</p>
+  <h2>주말 오후 <em>4시간</em>,<br>AI에게 일을 맡길 환경을 만드세요</h2>
+  <p>작업대·MCP·Skill·Plugin을 연결해, 새 업무에도 다시 쓰는 하네스 한 세트를 완성할 파일럿 참가자 4~5분을 찾습니다.</p>
   <a class="btn btn--primary" href="https://docs.google.com/forms/d/e/1FAIpQLSfkgjpca7ju0qVWHbRzup8ZFzAiJzAquXuB-yrjJrC5lc8QDA/viewform" target="_blank" rel="noopener">리허설 참가 신청하기 (5만원)</a>
   <p class="mini">마곡·가양 인근 스터디룸 (확정 후 개별 안내) · 4~5인 · 8월 8일(토) 오후 1시</p>
 </div></section>
 
-<footer>claude-code-workshop · 비개발자를 위한 Claude Code 업무 자동화 핸즈온</footer>
+<footer>claude-code-workshop · 비개발자를 위한 Claude 업무 하네스 핸즈온</footer>
 
 <script>
   // 스크롤 리빌

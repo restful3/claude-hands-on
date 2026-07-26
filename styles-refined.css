@@ -417,6 +417,10 @@ body {
   margin-top: 28px;
 }
 
+.pipe {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
 .pipe::before {
   display: none;
 }
@@ -447,6 +451,10 @@ body {
 
 .step:nth-child(4) {
   --connector: #c59262;
+}
+
+.step:nth-child(5) {
+  --connector: #d7a14d;
 }
 
 .step .node {
@@ -916,6 +924,10 @@ footer {
   .hero-visual {
     width: min(100%, 600px);
     margin: 0 auto;
+  }
+
+  .pipe {
+    grid-template-columns: 1fr;
   }
 
   .pain-grid,

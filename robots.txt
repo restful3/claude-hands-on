@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://restful3.github.io/claude-hands-on/sitemap.xml

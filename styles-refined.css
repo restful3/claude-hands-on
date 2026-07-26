@@ -743,7 +743,7 @@ body {
 
 .trust {
   max-width: 980px;
-  grid-template-columns: .78fr 1.22fr;
+  grid-template-columns: 1.24fr .76fr;
   gap: 0;
   border-block: 1px solid var(--line);
 }
@@ -807,6 +807,12 @@ body {
   padding-left: 18px;
   color: var(--muted);
   font-size: 14px;
+  line-height: 1.62;
+}
+
+.instructor-points li b {
+  color: var(--ink);
+  font-weight: 680;
 }
 
 .instructor-points li::before {

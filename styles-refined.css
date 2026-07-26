@@ -742,8 +742,8 @@ body {
 }
 
 .trust {
-  max-width: 980px;
-  grid-template-columns: 1.24fr .76fr;
+  max-width: 860px;
+  grid-template-columns: 1fr;
   gap: 0;
   border-block: 1px solid var(--line);
 }
@@ -813,6 +813,15 @@ body {
 .instructor-points li b {
   color: var(--ink);
   font-weight: 680;
+}
+
+.instructor-points li a {
+  color: var(--blue);
+  text-underline-offset: 3px;
+}
+
+.instructor-points li a:hover {
+  color: var(--navy);
 }
 
 .instructor-points li::before {

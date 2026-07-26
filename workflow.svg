@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="520" viewBox="0 0 640 520" role="img" aria-labelledby="title desc">
+  <title id="title">업무 메일이 근거표와 제안서로 이어지는 과정</title>
+  <desc id="desc">받은 업무와 자료를 프로젝트 폴더에서 처리해 근거표와 제안서 결과물로 만드는 흐름</desc>
+  <defs>
+    <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#19375f" stop-opacity=".96"/>
+      <stop offset="1" stop-color="#0d223d" stop-opacity=".96"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f4b54e"/>
+      <stop offset="1" stop-color="#d98a1c"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="160%">
+      <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#020b17" flood-opacity=".26"/>
+    </filter>
+  </defs>
+
+  <g fill="none" stroke="#fff" stroke-opacity=".08">
+    <path d="M0 20H640M0 100H640M0 180H640M0 260H640M0 340H640M0 420H640M0 500H640"/>
+    <path d="M20 0V520M100 0V520M180 0V520M260 0V520M340 0V520M420 0V520M500 0V520M580 0V520"/>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="36" y="30" width="568" height="128" rx="14" fill="url(#panel)" stroke="#fff" stroke-opacity=".19"/>
+    <rect x="60" y="54" width="78" height="24" rx="4" fill="#fff" fill-opacity=".08"/>
+    <text x="73" y="71" fill="#a9b9cf" font-family="Pretendard, 'Noto Sans KR', sans-serif" font-size="11" font-weight="600" letter-spacing=".8">01 INPUT</text>
+    <text x="60" y="111" fill="#fff" font-family="Pretendard, 'Noto Sans KR', sans-serif" font-size="19" font-weight="650">밀키트 파일럿 검토 요청</text>
+    <text x="60" y="137" fill="#95a7be" font-family="Pretendard, 'Noto Sans KR', sans-serif" font-size="12" font-weight="450">메일  ·  사내 자료  ·  첨부 파일</text>
+    <circle cx="562" cy="70" r="14" fill="#f2aa3c" fill-opacity=".16" stroke="#f2aa3c" stroke-opacity=".72"/>
+    <path d="M556 70h12M562 64v12" stroke="#f2aa3c" stroke-width="1.5"/>
+  </g>
+
+  <path d="M320 158V198" stroke="#f2aa3c" stroke-width="1.5"/>
+  <circle cx="320" cy="179" r="3.5" fill="#f2aa3c"/>
+
+  <g filter="url(#shadow)">
+    <rect x="116" y="198" width="408" height="88" rx="12" fill="#07111f" stroke="#f2aa3c" stroke-opacity=".65"/>
+    <rect x="140" y="222" width="8" height="8" rx="2" fill="url(#accent)"/>
+    <text x="164" y="232" fill="#f2aa3c" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="600" letter-spacing=".7">CLAUDE CODE · PROJECT FOLDER</text>
+    <text x="140" y="259" fill="#dce5f1" font-family="Pretendard, 'Noto Sans KR', sans-serif" font-size="14" font-weight="550">“자료를 확인하고 근거가 보이는 제안서로 정리해줘”</text>
+  </g>
+
+  <path d="M320 286V326M178 326H462M178 326V350M462 326V350" fill="none" stroke="#f2aa3c" stroke-width="1.5"/>
+  <circle cx="320" cy="326" r="3.5" fill="#f2aa3c"/>
+
+  <g filter="url(#shadow)">
+    <rect x="36" y="350" width="284" height="140" rx="14" fill="url(#panel)" stroke="#fff" stroke-opacity=".19"/>
+    <text x="60" y="381" fill="#9caec4" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="600" letter-spacing=".8">02 EVIDENCE</text>
+    <text x="60" y="420" fill="#fff" font-family="Pretendard, 'Noto Sans KR', sans-serif" font-size="18" font-weight="650">근거표</text>
+    <path d="M60 444H280M60 462H242" stroke="#fff" stroke-opacity=".2" stroke-width="7" stroke-linecap="round"/>
+    <rect x="263" y="374" width="33" height="19" rx="4" fill="#f2aa3c" fill-opacity=".14"/>
+    <text x="271" y="387" fill="#f2aa3c" font-family="Pretendard, 'Noto Sans KR', sans-serif" font-size="9" font-weight="650">완료</text>
+
+    <rect x="340" y="350" width="264" height="140" rx="14" fill="url(#panel)" stroke="#f2aa3c" stroke-opacity=".56"/>
+    <text x="364" y="381" fill="#d6aa65" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="600" letter-spacing=".8">03 DELIVERABLE</text>
+    <text x="364" y="420" fill="#fff" font-family="Pretendard, 'Noto Sans KR', sans-serif" font-size="18" font-weight="650">제안서 수정본</text>
+    <path d="M364 444H560M364 462H524" stroke="#fff" stroke-opacity=".2" stroke-width="7" stroke-linecap="round"/>
+    <rect x="547" y="374" width="33" height="19" rx="4" fill="url(#accent)"/>
+    <text x="555" y="387" fill="#251704" font-family="Pretendard, 'Noto Sans KR', sans-serif" font-size="9" font-weight="700">완료</text>
+  </g>
+</svg>
